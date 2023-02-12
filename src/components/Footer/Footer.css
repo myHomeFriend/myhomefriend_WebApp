@@ -1,0 +1,75 @@
+.footer-section {
+  background-color: rgb(15, 52, 96);
+  font-size: 14px;
+}
+
+.footer-container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  color: white;
+  padding: 1rem;
+}
+
+.footer-row {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  overflow: hidden;
+}
+
+.footer-section .logo {
+  width: 100px;
+  height: 100px;
+  color: white;
+}
+
+.footer-section .company-description {
+  margin-bottom: 1.25rem;
+  margin-top: 0px;
+  color: rgb(174, 180, 190); 
+}
+
+.footer-section .heading-4 {
+  padding-top: 38px;
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+}
+
+.description-links {
+  position: relative;
+  display: block;
+  padding: 0.3rem 0rem;
+  color: rgb(174, 180, 190);
+  cursor: pointer;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+.description-links:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.companydetails {
+   
+  color: white;
+  font-size: 14px;
+}
+
+.address {
+  cursor: text;
+}
+
+.phone,
+.mail {
+  color: rgb(174, 180, 190);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.phone:hover,
+.mail:hover {
+  color: white;
+  text-decoration: underline;
+}

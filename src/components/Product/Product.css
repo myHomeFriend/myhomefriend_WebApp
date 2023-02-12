@@ -1,0 +1,23 @@
+.card {
+  border: none;
+  transition: all 0.3s ease 0s;
+  background: #e2e5e8;
+}
+
+.card:hover {
+   box-shadow: 0 3px 16px 0 rgb(0 0 0 / 11%); 
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-img-top {
+  transition: all 0.3s ease 0s;
+}
+ 
+
+.card-title h5 {
+  font-size: 1rem;
+  font-weight: 600;
+}

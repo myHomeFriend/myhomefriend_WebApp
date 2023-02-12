@@ -1,0 +1,44 @@
+.companyBenefitsContainer {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  margin-bottom: 20px;
+  padding: 1.5rem;
+  background-color: rgb(255, 255, 255);
+}
+
+.companyBenefitsContainer .items {
+  text-align: center;
+  border-right: 1px solid rgb(218, 225, 231);
+}
+
+.companyBenefitsContainer .items:last-child {
+  border-right: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .companyBenefitsContainer .items {
+    text-align: center;
+    border-bottom: 1px solid rgb(218, 225, 231);
+    border-right: none;
+  }
+
+  .companyBenefitsContainer .items .itemRow {
+    margin: 2rem 0;
+  }
+
+  .companyBenefitsContainer .items .itemRow :last-child {
+    margin: 0;
+  }
+
+  .companyBenefitsContainer .items:last-child {
+    border-bottom: none;
+    border-right: none;
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .companyBenefitsContainer {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}

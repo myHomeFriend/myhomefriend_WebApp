@@ -1,0 +1,122 @@
+.categoryContainer {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  margin-bottom: 20px;
+  padding-top: 2rem;
+}
+
+.categoryRow {
+  display: flex;
+  flex-wrap: wrap;
+  height: unset;
+  margin: -0.375rem;
+  /* justify-content: center; */
+}
+
+.categoryItem {
+  width: 16.6667%;
+  padding: 0.375rem;
+}
+
+.categoryItemBorder {
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 4px;
+  position: relative;
+  box-shadow: none;
+}
+.categoryItemBorder .itemImage {
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  width: initial;
+  height: 200px;
+  background: none;
+  opacity: 1;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+
+.categoryItemBorder:hover .itemImage {
+  transform: scale(1.1);
+}
+
+.categoryItemBorder .itemImageText {
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  padding: 8px;
+  text-align: center;
+  border-radius: 2px;
+  position: absolute;
+  transition: all 0.3s ease 0s;
+  background-color: rgba(255, 255, 255, 0.67);
+}
+
+.categoryItemBorder:hover .itemImageText {
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+}
+
+.categoryImage {
+  position: absolute;
+  inset: 0px;
+  box-sizing: border-box;
+  padding: 0px;
+  border: none;
+  margin: auto;
+  display: block;
+  width: 0px;
+  height: 0px;
+  min-width: 100%;
+  max-width: 100%;
+  min-height: 100%;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.categoryItemBorder .itemImage span {
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+  width: initial;
+  height: initial;
+  background: none;
+  opacity: 1;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  position: relative;
+}
+
+.categoryItemBorder .itemImageText .itemText {
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+@media only screen and (max-width: 1199px) {
+  .categoryContainer {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .categoryItem {
+    width: 33.3333%;
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+    .categoryItem {
+      width: 50%;
+    }
+  }
+  

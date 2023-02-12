@@ -1,0 +1,57 @@
+.CategoryWiseProductsContainer {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding-top: 2rem;
+}
+
+.CategoryWiseProductsRow {
+    display: flex;
+    flex-flow: row wrap;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #eee;
+}
+
+
+.CategoryWiseProductsRow:last-child { 
+    border-bottom: none;
+}
+ 
+.Category-header {
+  width: 80%;
+  text-align: left;
+  font-size: 20px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+
+.Category-more {
+  width: 20%;
+  text-align: right;
+  cursor: pointer;
+}
+
+.Category-more:hover{
+    color:#336699;
+    text-transform: capitalize;
+    transition: cubic-bezier(0.47, 0, 0.745, 0.715);
+}
+
+@media only screen and (max-width: 1199px) {
+  .CategoryWiseProductsContainer {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .Category-header,
+  .Category-more {
+    width: 100%;
+    text-align: center;
+  }
+}
