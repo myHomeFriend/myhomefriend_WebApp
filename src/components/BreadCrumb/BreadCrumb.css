@@ -1,0 +1,26 @@
+.breadcrumbDiv {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  padding-top: 1.5rem; 
+}
+
+.breadcrumb-item a {
+  color: #878787;
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  outline: none;
+  max-width: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 1199px) {
+  .breadcrumbDiv {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+}

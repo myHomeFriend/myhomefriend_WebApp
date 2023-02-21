@@ -1,41 +1,17 @@
-import React from "react";
-import "./CategoryBanner.css";
+import { FC } from "react";
 import CategoryBannerItem from "./components/CategoryBannerItem";
-import hardware from "../../images/hardware.jpg";
-import sanitary from "../../images/sanitary.jpg";
-import appliances from "../../images/appliances.jpg";
-import paint from "../../images/paint.png";
-import Fevicol from "../../images/Fevicol.jpg";
+import { ICategoryBanner } from "./types";
+import "./CategoryBanner.css";
 
-export const CategoryBanner = () => {
+export const CategoryBanner: FC<ICategoryBanner> = (props) => { 
+  const { categories } = props;
   return (
     <div className="categoryContainer">
       <div className="categoryRow">
-        <CategoryBannerItem
-          image={hardware}
-          imageText={"Hardware"}
-          url={"/hardware"}
-        />
-        <CategoryBannerItem
-          image={sanitary}
-          imageText={"Sanitary"}
-          url={"/sanitary"}
-        />
-        <CategoryBannerItem
-          image={appliances}
-          imageText={"Appliances"}
-          url={"/appliances"}
-        />
-        <CategoryBannerItem
-          image={paint}
-          imageText={"Paint"}
-          url={"/paint"}
-        />
-        <CategoryBannerItem
-          image={Fevicol}
-          imageText={"Fevicol"}
-          url={"/fevicol"}
-        /> 
+        {categories &&
+          categories.map((category, index) => {
+            return <CategoryBannerItem key={index} {...category} />;
+          })}
       </div>
     </div>
   );

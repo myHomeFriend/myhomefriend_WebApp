@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import BreadCrumb from "../../components/BreadCrumb/BreadCrumb";
 
-const SubCategory = () => {
+const ProductType = () => {
   const path = useLocation();
   const [breadCrumb, setBreadCrumb] = useState<string>("");
 
   useEffect(() => {
     setBreadCrumb(path.pathname);
   }, [path]);
+
   return (
     <>
       <BreadCrumb path={breadCrumb} />
-      <div>SubCategory</div>
+      <div>ProductType</div>
     </>
   );
 };
 
-export default SubCategory;
+export default ProductType;

@@ -1,55 +1,77 @@
-import React from "react";
+import React, { FC } from "react";
 import { Link } from "react-router-dom";
 import PrettyRating, { IconsInterface } from "pretty-rating-react";
-import { 
-    faStar,
-    faStarHalfAlt,
-  } from "@fortawesome/free-solid-svg-icons";
-  import { 
-    faStar as farStar,
-  } from "@fortawesome/free-solid-svg-icons";
-  
-import Button from "react-bootstrap/Button";
+import { faStar, faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
+import { faStar as farStar } from "@fortawesome/free-solid-svg-icons";
 import Card from "react-bootstrap/Card";
-import hetticChannel from "../../images/hettichChannel.jpg";
 import "./Product.css";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
+import { IProduct } from "./types";
+import Rupee from "../../svg/Rupee";
 
 interface CustomIconsInterface {
-    star: IconsInterface; 
-  }
-  
-  const icons: CustomIconsInterface = {
-    star: {
-      complete: faStar,
-      half: faStarHalfAlt,
-      empty: farStar,
-    } 
-  };
-  const colors = {
-   star: ['#92b73f', '#92b73f', '#92b73f'] 
-  };
+  star: IconsInterface;
+}
+const icons: CustomIconsInterface = {
+  star: {
+    complete: faStar,
+    half: faStarHalfAlt,
+    empty: farStar,
+  },
+};
+const colors = {
+  star: ["#92b73f", "#92b73f", "#92b73f"],
+};
 
-const Product = () => {
+const Product: FC<IProduct> = (props) => {
+  const {
+    productId,
+    productCode,
+    productImage,
+    productMarketPrice,
+    productDiscountedPrice,
+    productRatingValue,
+    productTitle,
+    productCategory,
+    productSubCategory,
+  } = props;
   return (
-    <Card style={{ width: "18rem" }}>
-      <Link to="hardware/door/channel">
-        <Card.Img variant="top" src={hetticChannel} />
+    <Card key={productId} id={productCode}>
+      <Link to={`/${productCategory}/${productSubCategory}/${productCode}`}>
+        <Card.Img variant="top" src={productImage} />
       </Link>
       <Card.Body>
-        <Card.Title>Channel 12*18</Card.Title>
-        <Card.Text>
-          <Row>
-            <Col>
-            Rs.200
-            </Col>
-            <Col>
-            <PrettyRating value={5} icons={icons.star} colors={colors.star} />
-            </Col>
-          </Row>
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
+        <Card.Title>
+          <Link to={`/${productCategory}/${productSubCategory}/${productCode}`}>
+            {productTitle}
+          </Link>
+        </Card.Title>
+        <Row>
+          <Col className="product-price">
+            <span className="new-price">
+              <ins>
+                {<Rupee />}
+                {productDiscountedPrice}
+              </ins>
+            </span>
+            <span className="old-price">
+              <del>
+                {<Rupee />}
+                {productMarketPrice}
+              </del>
+            </span>
+          </Col>
+          <Col>
+            <div className="rating-container">
+              <PrettyRating
+                value={productRatingValue}
+                icons={icons.star}
+                colors={colors.star}
+              />
+            </div>
+          </Col>
+        </Row>
       </Card.Body>
     </Card>
   );

@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+
+import React, {  useState } from "react";
 import { Link } from "react-router-dom";
 import { data } from "../../constants/header";
-import ChevronDown from "./svg/ChevronDown";
-import Logo from "./svg/Logo"; 
-import Search from "./svg/Search";
+import ChevronDown from "../../svg/ChevronDown";
+import Logo from "../../svg/Logo";
+import Search from "../../svg/Search";
 import "./Header.css";
 import useComponentVisible from "../../hooks/useComponentVisible";
 import LoginModal from "../LoginModal/LoginModal";
-import User from "./svg/User";
-import Bag from "./svg/Bag";
-import Whatsapp from "./svg/Whatsapp";
+import User from "../../svg/User";
+import Bag from "../../svg/Bag";
+import Whatsapp from "../../svg/Whatsapp";
 import useCheckMobileScreen from "../../hooks/useCheckMobileScreen";
-import MenuBar from "./components/MenuBar/MenuBar";
+import MenuBar from "./components/MenuBar/MenuBar"; 
 
 export const Header = () => {
   const { ref, isComponentVisible, setIsComponentVisible } =
@@ -41,11 +42,11 @@ export const Header = () => {
   }
 
   function handleInputValue(e: React.KeyboardEvent<HTMLInputElement>): void {
-    setSearchValue(e.currentTarget.value);
+    setSearchValue(searchValue + e.currentTarget.value);
     setIsSearchVisible(true);
-  }
+  } 
 
-  console.log(searchValue);
+
 
   return (
     <div>
@@ -213,7 +214,7 @@ export const Header = () => {
       </div>
 
       <div className="header-last">
-        <MenuBar />
+          <MenuBar   /> 
       </div>
       {isLoginModalVisible && <LoginModal loginRef={loginModalRef} />}
     </div>

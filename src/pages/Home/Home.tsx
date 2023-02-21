@@ -5,6 +5,7 @@ import { IBanner } from "../../components/BannerImage/types";
 import { CategoryBanner } from "../../components/CategoryBanner/CategoryBanner";
 import CategoryWiseProducts from "../../components/CategoryWiseProducts/CategoryWiseProducts";
 import CompanyBenefits from "../../components/CompanyBenefits/CompanyBenefits";
+import { categoryData } from "../../constants/category";
 import hetticChannel from "../../images/hetticChannel1.jpg";
 import "./Home.css";
 
@@ -37,17 +38,20 @@ const Home: FC = (): JSX.Element => {
                 <BannerImage {...bannerMock[0]} />
               </div>
               <div className="bannerImgDiv">
-                <BannerImage {...bannerMock[0]} />
+                <BannerImage {...bannerMock[1]} />
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <CompanyBenefits />
 
-      <CategoryBanner />
+      <CategoryBanner categories={categoryData} />
 
-      <CategoryWiseProducts/>
+      {categoryData.map((category) => {
+        return <CategoryWiseProducts key={category.categoryId} {...category} />;
+      })}
     </section>
   );
 };

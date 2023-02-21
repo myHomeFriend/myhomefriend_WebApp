@@ -32,6 +32,11 @@
 .Category-more {
   width: 20%;
   text-align: right;
+}
+
+.Category-more a{ 
+  color: black;
+  text-decoration: none;
   cursor: pointer;
 }
 

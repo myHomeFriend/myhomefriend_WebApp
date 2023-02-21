@@ -1,23 +1,124 @@
 .card {
-  border: none;
-  transition: all 0.3s ease 0s;
-  background: #e2e5e8;
+  width: 18rem;
+  margin-bottom: 1rem;
+  min-height: 25rem;
 }
 
-.card:hover {
-   box-shadow: 0 3px 16px 0 rgb(0 0 0 / 11%); 
+.card {
+  border: none;
+  transition: all 0.3s ease 0s;
+  background: #fff;
 }
 
 .card-body {
+  padding: var(--bs-card-cap-padding-y) var(--bs-card-cap-padding-y) !important;
   text-align: center;
+  cursor: pointer;
 }
 
-.card-img-top {
-  transition: all 0.3s ease 0s;
+.card:hover {
+  box-shadow: 0 3px 16px 0 rgb(0 0 0 / 11%);
 }
- 
 
-.card-title h5 {
+.card a {
+  padding: 15px 15px 0 15px;
+}
+
+.card-title.h5 {
   font-size: 1rem;
-  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: Poppins, sans-serif;
+  line-height: 1.2;
+  color: #333;
+  letter-spacing: 0;
 }
+
+.card-title a{
+  color: black;
+  text-decoration: none;
+}
+
+.card-img-top:hover {
+  transform: rotate(180deg);
+}
+
+.product-price {
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.product-price .new-price {
+  color: #333;
+  text-decoration: none;
+  margin-right: 3px;
+}
+
+.product-price .new-price ins {
+  text-decoration: none;
+}
+
+.product-price .old-price {
+  color: #bababf;
+}
+
+.rating-container.tooltiplink {
+  position: relative;
+}
+
+.rating-container.tooltiplink:hover::after {
+  content: attr(data-title);
+  background-color: #8fbc8f;
+  color: #fff;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 14px;
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 1024px) {
+  .card {
+    width: 15rem;
+    height: auto;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .card {
+    width: auto;
+    margin-bottom: 1rem;
+  }
+  .card-title.h5 {
+    height: auto;
+  }
+}
+/* 
+@media only screen and (min-width: 780px) {
+  .card {
+    width: 15rem;
+    margin-bottom: 1rem;
+  }
+} */
+/* 
+@media only screen and (min-width: 600px) {
+  .card {
+    width: 21rem;
+    margin-bottom: 1rem;
+  }
+} */
+/* 
+@media only screen and (min-width: 250px) {
+  .card {
+    width: auto;
+    margin-bottom: 1rem;
+  }
+} */

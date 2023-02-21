@@ -1,4 +1,4 @@
-
+ 
 export const data = {
     Mobile: "+91 7206969076",
     Email: "deepanshu2912@gmail.com",
